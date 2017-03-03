@@ -506,7 +506,7 @@ describe('typeahead tests', function() {
       var element = prepareInputEl('<div><input id="typeahead-element" ng-model="result" uib-typeahead="item for item in source | filter:$viewValue" typeahead-show-hint="true"></div>');
       var inputEl = findInput(element);
 
-      expect(inputEl.size()).toBe(2);
+      expect(inputEl.length).toBe(2);
       expect(inputEl.eq(0).attr('id')).toBe(undefined);
       expect(inputEl.eq(1).attr('id')).toBe('typeahead-element');
     });
@@ -1517,6 +1517,7 @@ describe('typeahead tests', function() {
       inputEl.focus();
       $timeout.flush();
       $scope.$digest();
+      changeInputValueTo(element, '');
       expect(element).toBeOpenWithActive(3, 0);
     });
   });
