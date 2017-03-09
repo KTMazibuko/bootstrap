@@ -52,7 +52,7 @@ angular.module('ui.bootstrap.tabs', [])
       return 0;
     });
 
-    if (tab.index === ctrl.active || (!angular.isDefined(ctrl.active) && ctrl.tabs.length === 1) || (ctrl.active === null && ctrl.tabs.length === 1 )) 
+    if (tab.index === ctrl.active || !angular.isDefined(ctrl.active) && ctrl.tabs.length === 1 || ctrl.active === null && ctrl.tabs.length === 1 ) 
 	{
       var newActiveIndex = findTabIndex(tab.index);
       ctrl.select(newActiveIndex);
